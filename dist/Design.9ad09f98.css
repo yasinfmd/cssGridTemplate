@@ -1,0 +1,646 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+.header {
+    box-sizing: border-box;
+    z-index: 5;
+    height: 60px;
+    background: #5a5df6;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.headerLeft {
+    display: flex;
+    align-items: center;
+}
+
+.headerRight {
+    display: flex;
+    align-items: center;
+    margin-right: 16px;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 16pt;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    cursor: pointer;
+}
+
+.headerLogo {
+    font-family: cursive;
+    font-size: 22pt;
+    font-weight: bold;
+    color: #ffffff;
+    letter-spacing: 10px;
+}
+
+.headerMenuIcon {
+    cursor: pointer;
+    transition: all 200m;
+    padding: 0px 14px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.headerMenuIcon svg {
+    fill: #ffffff;
+}
+
+.wrapper {
+    height: calc(100vh - 60px);
+    position: relative;
+    z-index: 1;
+}
+
+aside {
+    border-radius: 1px;
+    display: flex;
+    flex-direction: column;
+    width: 268px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transition: all 400ms;
+    top: 0;
+    background: #181e36;
+    border-top: 1px solid #232335;
+}
+
+aside.close {
+    left: -268px;
+}
+
+.sideBarUser {
+    height: 272px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.userActions {
+    width: 100%;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.userActions a {
+    font-size: 10pt;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.sideBarUser .userName {
+    font-size: 16pt;
+    font-family: 'Courier New', Courier, monospace;
+    color: #ffffff;
+}
+
+.userImage img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+.sideBarMenuListWrapper {
+    flex: 1;
+    background: #1f2c4f;
+    height: 100%;
+    border-top-right-radius: 80px;
+    border-bottom-left-radius: 80px;
+    border-top-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.mt40 {
+    margin-top: 40px;
+}
+
+.mt20 {
+    margin-top: 20px;
+}
+
+.mb20 {
+    margin-bottom: 20px;
+}
+
+.mb40 {
+    margin-bottom: 40px;
+}
+
+.sideBarMenuListWrapper ul li {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    color: #ffffff;
+    flex-wrap: wrap;
+    padding-left: 32px;
+    padding-right: 32px;
+    height: 40px;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    transition: all 200ms;
+    margin-top: 20px;
+}
+
+.sideBarMenuListWrapper ul li .menuIcon {
+    margin-right: 30px;
+}
+
+.sideBarMenuListWrapper ul li.active {
+    background: #5a5df6;
+}
+
+.sideBarMenuListWrapper ul {
+    max-height: 500px;
+    overflow: auto;
+}
+
+.sideBarMenuListWrapper ul::-webkit-scrollbar {
+    width: 8px;
+    display: none;
+}
+
+.sideBarMenuListWrapper ul {
+    scrollbar-width: thin;
+    scrollbar-color: #ffffff #1f2c4f;
+}
+
+.sideBarMenuListWrapper ul::-webkit-scrollbar-track {
+    background: #1f2c4f;
+}
+
+.sideBarMenuListWrapper ul::-webkit-scrollbar-thumb {
+    background-color: #ffffff;
+    border-radius: 6px;
+    border: 3px solid #1f2c4f;
+}
+
+aside.close+section.contentWrapper {
+    left: 0;
+}
+
+.contentWrapper {
+    padding: 60px;
+    background: #ffffff;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 268px;
+    right: 0px;
+    transition: all 200ms;
+    overflow: auto;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.welcomeMessage {
+    display: flex;
+    align-items: center;
+    font-size: 22pt;
+}
+
+.welcomeMessage .dayMsg {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #181e36;
+}
+
+.welcomeMessage .userName {
+    font-weight: bold;
+    color: #8393a8;
+}
+
+.dashboardCardWrapper {
+    display: grid;
+    grid-template-columns: repeat( 3, 1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.dashCard {
+    width: 400px;
+    height: 240px;
+    border-radius: 21px;
+    display: flex;
+    color: #ffffff;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    flex-direction: column;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.dashCard.purple {
+    background: #5a5df6;
+    align-items: center;
+}
+
+.dashCardText {
+    font-weight: bold;
+    font-size: 14pt;
+}
+
+.dashCardMoney {
+    font-size: 22pt;
+    font-weight: bold;
+}
+
+.dashCardBottomInfo {
+    background: #3d40d9;
+    border-radius: 12px;
+    padding: 4px;
+}
+
+.rankCardWrapper {
+    display: flex;
+    flex-direction: column;
+    background: #f3f6fd;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    box-sizing: border-box;
+}
+
+.rankCard {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+
+.rankCard .cardCounter {
+    background: #5a5df6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    width: 55px;
+    height: 54px;
+    border-radius: 14px;
+}
+
+.cardInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-around;
+}
+
+.cardInfo .cardInfoTitle {
+    font-size: 16pt;
+    font-weight: bold;
+    color: black;
+}
+
+.cardInfo .cardSubTitle {
+    color: #8393a8;
+}
+
+.rankCardBottomInfo {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.rankCardBottom {
+    margin-bottom: 4px;
+    padding: 4px;
+    color: black;
+    background: #e4ebf6;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+}
+
+.projectsWrapper {
+    height: 240px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.projectsTitle {
+    font-size: 18pt;
+    margin-bottom: 10px;
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 50px;
+}
+
+
+/* Handle on hover */
+
+.projectUserWrapper {
+    overflow: auto;
+    max-height: 200px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.projectUserCard {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.projectUserAvatar {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+}
+
+.projectUserAvatar img {
+    max-width: 50px;
+    max-height: 50px;
+    border-radius: inherit;
+}
+
+.projectUserInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 20px;
+    line-height: 30px;
+}
+
+.projectUserInfoTitle {
+    font-size: 14pt;
+    font-weight: 900;
+    color: black;
+}
+
+.projectUserInfoSubTitle {
+    font-size: 10pt;
+    color: #8393a8;
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 1245px) and (min-width: 768px) {
+    .dashCard {
+        width: 100%;
+    }
+    .dashboardCardWrapper {
+        grid-template-columns: repeat( 2, 1fr);
+    }
+    .projectsWrapper {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+}
+
+
+/* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+
+@media screen and (max-width: 768px) and (min-width: 320px) {
+    .welcomeMessage {
+        flex-direction: column;
+    }
+    .dashCard {
+        width: 100%;
+    }
+    .dashboardCardWrapper {
+        grid-template-columns: repeat( 1, 1fr);
+    }
+    .pageBottomLeftCardWrapper {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+    .recommendedProjects {
+        grid-row-start: 2 !important;
+        grid-column-start: 1 !important;
+        grid-column-end: 3 !important;
+    }
+    .pageBottomJoin {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+}
+
+.pageBottomWrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 20px;
+    padding: 10px;
+}
+
+.grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    font-size: 30px;
+    text-align: center;
+}
+
+.recommendedProjects {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 2;
+}
+
+.pageBottomTitles {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    color: #8393a8;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.pageBottomLeftCard {
+    display: flex;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    box-sizing: border-box;
+    padding: 20px;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.pageBottomLeftCardImage img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.pageBottomLeftCardTexts {
+    display: flex;
+    flex-direction: column;
+    line-height: 20px;
+}
+
+.pageBottomLeftCardTexts .pageBottomLeftCardTextTitle {
+    font-weight: bold;
+    font-size: 14pt;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.pageBottomLeftCardTexts .pageBottomLeftCardTextSubTitle {
+    font-weight: bold;
+    font-size: 10pt;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #8393a8
+}
+
+.pageBottomLeftCard .pageBottomLeftCardMoney {
+    font-weight: bold;
+    font-size: 14pt;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #8393a8
+}
+
+.pageBottomLeftCardWrapper {
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    border-radius: 21px;
+}
+
+.pageBottomJoin {
+    background: #181e36;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 20px;
+    border-radius: 13px;
+    border: 1px solid #ddd;
+}
+
+.pageBottomJoin .pageBottomJoinText {
+    flex: 1;
+    margin-left: 20px;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+}
+
+.pageBottomJoinText .pageBottomJoinTextTitle {
+    margin-bottom: 10px;
+    font-size: 14pt;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+.pageBottomJoinText .pageBottomJoinTextSubTitle {
+    color: #ddd;
+    font-size: 10pt;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+.pageBottomJoinButton button {
+    pointer-events: all;
+    cursor: pointer;
+    padding: 12px;
+    height: 40px;
+    background: #3d40d9;
+    border: none;
+    outline: none;
+    text-align: center;
+    color: #ffffff;
+    border-radius: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.pageBottomRightCardWrapper {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    border-radius: 21px;
+    padding: 20px;
+}
+
+.pageBottomRightCardUser {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.pageBottomRightCardUserImage img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.pageBottomRightCardTexts {
+    display: flex;
+    flex-direction: column;
+    line-height: 30px;
+}
+
+.pageBottomRightCardTexts .pageBottomRightCardTextsTitle {
+    font-size: 14pt;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+.pageBottomRightCardTexts .pageBottomRightCardTextsSubTitle {
+    color: #8393a8;
+    font-size: 10pt;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+.pageBottomRightCardButton button {
+    pointer-events: all;
+    cursor: pointer;
+    padding: 12px;
+    height: 40px;
+    background: #3d40d9;
+    border: none;
+    outline: none;
+    text-align: center;
+    color: #ffffff;
+    border-radius: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.pageBottomRightCardMainText {
+    line-height: 25px;
+    font-weight: bold;
+    font-size: 13pt;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.pageBottomRightCardSubText {
+    line-height: 22px;
+    font-weight: 500;
+    font-size: 12pt;
+    color: #8393a8;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/*# sourceMappingURL=/Design.9ad09f98.css.map */
